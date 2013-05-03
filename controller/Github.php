@@ -4,7 +4,7 @@
 
 	class Github extends Controller{
 		public function main (){
-			exec('git pull https://github.com/Web-Project/jca.git master'); 
+			exec('git pull https://github.com/jca-bookkeeping-services/application.git master'); 
 		}
 
 		public function application(){
