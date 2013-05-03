@@ -8,15 +8,15 @@
 		}
 
 		public function application(){
-			exec('cd application'); 
+			chdir('application');
 			exec('git pull https://github.com/jca-bookkeeping-services/application.git master'); 
-			exec('cd ../');  	
+			chdir('../');
 		}
 
-		public function framework(){
-			exec('cd framework'); 
+		public function framework(){ 
+			chdir('framework');
 			exec('git pull https://github.com/jca-bookkeeping-services/framework.git master');  	
-			exec('cd ../');  	
+			chdir('../');
 		}
 	}
 ?>
