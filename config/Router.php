@@ -6,5 +6,5 @@
 	
 	//$rtr_config['base_url'] = 'http://localhost/jca/'; // for local
 	//$rtr_config['base_url'] = 'http://jca.druid-innovations.com/jca/'; // for ipage
-	$rtr_config['base_url'] = 'http://jca-dev.druidinc.com/'; // for justhost
+	$rtr_config['base_url'] = 'http://jca.druidinc.com/'; // for justhost
 ?>
