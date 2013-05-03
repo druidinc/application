@@ -15,7 +15,7 @@
 
 		public function framework(){ 
 			chdir('framework');
-			exec('git pull https://github.com/jca-bookkeeping-services/framework.git master');  	
+			exec('git pull https://github.com/druidinc/framework.git master');  	
 			chdir('../');
 		}
 	}
