@@ -60,7 +60,7 @@ Slide.prototype.startSlide = function(slide){
 	_slide = slide;
 	$('.pic_container').width(960 * slide.getImage().length);
 	for(index = 0; index < slide.getImage().length; index++) {
-		$('.pic_container').append('<img id="img_' + index + '" src="' + slide.getImage()[index] + '"   width="960px" height="300px">');
+		$('.pic_container').append('<img id="img_' + index + '" src="' + slide.getImage()[index] + '"   width="960px" height="300px" onload="$(\'.banner_loader\').hide();">');
 	}
 	this._slideId = setInterval("slideToLeft()",6000);
 }
