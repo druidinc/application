@@ -65,6 +65,10 @@ Slide.prototype.startSlide = function(slide){
 	this._slideId = setInterval("slideToLeft()",6000);
 }
 
+function hideImageLoadingBar(){
+
+}
+
 function slideToLeft() {
 	if(_slide.getImageIndex() >= 0) {
 
@@ -73,7 +77,8 @@ function slideToLeft() {
 				{
 			    	marginLeft: '-=960'
 			  	}, 
-		  		3000
+		  		5000,
+		  		"easeInOutCirc"
 		  	);
 
 		  	_slide.setImageIndex( _slide.getImageIndex() + 1);
