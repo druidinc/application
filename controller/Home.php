@@ -648,5 +648,40 @@
 			$view_data['clients'] = $clients->getClients();
 			$this->load->view('Clients',$view_data);
 		}
+
+		public function visaWorkPermit(){
+			$name = '';
+
+
+			if($this->validateGetField('name',$this->uri->get)) {
+				$name = $this->uri->get['name'];
+			}
+
+			$visa = $this->load->model('Admin/Visa_Working_Permit_Model');
+			$this->services = $this->load->model('Admin/Services_Model');
+			$this->pages = $this->load->model('Admin/Pages_Model');
+
+			$visaResult = $visa->getVisaWorkingPermitByName($name);
+
+			$view_data['display_text'] = $visaResult['display_text'];
+			$view_data['content'] = $visaResult['content'];
+
+			$view_data['services'] = $this->services->getServices();
+
+			$pageData = $this->pages->getPage('d',3);
+
+			foreach ($pageData as $data) {
+				$contents = json_decode($data['content']);
+
+				foreach ($contents->content as $content) {
+					$view_data['contact_company_name'] = $content->company_name;
+					$view_data['contact_address'] = $content->address;
+					$view_data['contact_email'] = $content->email;
+					$view_data['contact_contacts'] = $content->contacts;
+				}
+			}
+
+			$this->load->view('Visa_Working_Permit',$view_data);
+		}
 	}
 ?>

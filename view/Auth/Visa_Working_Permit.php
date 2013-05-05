@@ -25,7 +25,7 @@
 				            <ul class="ul">
 				                <li ><a href="{$base_url}Auth/Admin">Home</a></li>                
 				                <li><a href="{$base_url}Auth/Services">Services</a></li>
-				                <li class="menu_selected sage">
+				                <li class="sage">
 				                	<a href="#" class="sage">Peachtree</a>
 				                	<div class="sub-menu sage">
 					                	<ul class="sage">
@@ -34,7 +34,7 @@
 					                	</ul>
 					                </div>
 				                </li>
-				                <li><a href="{$base_url}Auth/Visa_Working_Permit">Visa &amp; Working Permit</a></li>
+				                <li class="menu_selected"><a href="{$base_url}Auth/Visa_Working_Permit">Visa &amp; Working Permit</a></li>
 				                <li><a href="{$base_url}Auth/Admin/representatives">Representatives</a></li>
 				                <li><a href="{$base_url}Auth/Pages">Pages</a></li>
 				                <li><a href="{$base_url}Auth/Clients">Clients</a></li>
@@ -50,43 +50,30 @@
 				<div class="inner-body">
 					<div class="users-panel services">
 						<div class="inner-panel">
-							<div class="add">
-								<a onclick="window.location='{$base_url}Auth/Sage/implementations'">Add Client</a>
-							</div>
 							<div class="panel-title">
-								<span><h5>List of Clients(Peachtree Implementations)</h5></span>
+								<span><h5>Products</h5></span>
 							</div>
 							<div class="panel-data">
 								<ul>
-									{foreach from=$implementations item=implementation}
+									{foreach from=$visa_working_permit item=visa}
 										<li class="category">
-											<div class="services category "  onclick="">{$implementation.type_name}</div>											
-											<ul class="ul_subcategory">
-												{foreach from=$implementation.clients item=client}
-													<li class="subcategory">														
-														<div class="services subcategory {if $id == $client.id}category_selected{/if}" id="{'client_'|cat:$client.id}" onclick="window.location='{$base_url}Auth/Sage/implementations?action=edit&id={$client.id}'">{$client.name}</div>														
-													</li>
-												{/foreach}
-											</ul>									
+											<div class="services category {if isset($id) && $id == $visa.id}category_selected{/if}" id="" onclick="window.location='{$base_url}Auth/Visa_Working_Permit/editVisaWorkingPermit?id={$visa.id}'">{$visa.display_text}</div>
 										</li>
-									{/foreach}					
+									{/foreach}							
 								</ul>
 							</div>
 						</div>						
 					</div>
 
 					<div class="users-panel general-data">
-						<form method="POST" action="" enctype='multipart/form-data'>
+						<form method="POST" action="{$base_url}Auth/Visa_Working_Permit/{if isset($id)}editVisaWorkingPermit?id={$id}{/if}" enctype='multipart/form-data'>
 							<div class="inner-panel">
 								<div class="add buttons">
-									<input type="submit" value="{if $action == 'add'}Add{else}Save{/if}" name="save"> | 
-									{if $action == 'edit'}
-										<input type="button" value="Remove" name="remove" onclick=""> |
-									{/if}
+									<input type="submit" value="Save" name="save"> | 									
 									<input type="reset" value="Reset" name="reset">
 								</div>
 								<div class="panel-title">
-									<span><h5>General Data - {if $action == 'add'}Add Client{else}Edit Client{/if}</h5></span>
+									<span><h5>General Data - {if $action == 'add'}Add Product{else}Edit Product{/if}</h5></span>
 								</div>
 								<div class="panel-data">
 									{$load_errors}
@@ -95,50 +82,45 @@
 											<tr class="row"  >
 												<td>
 													<div class="label">
-														<span>Name:<font color="red">*</font> </span>
+														<span>Name:</span>
 													</div>
 												</td>
 												<td class="input">
 													<div >
-														<input type="text" name="name" value="{$name}"/>														
+														<input type="text" name="name" value="{$name}" readonly/>														
 														<input type="hidden" name="token" value="{$token}" />
-													</div>
-												</td>											
-											</tr>	
-											<tr class="row"  >
-												<td>
-													<div class="label">
-														<span>Type:</span>
-													</div>
-												</td>
-												<td class="input">
-													<div >
-														<input type="text" name="type" value="{$type}"/>
-														{if isset($type_id)}
-															<input type="hidden" name="type_id" value="{$type_id}" />
-														{/if}
 													</div>
 												</td>											
 											</tr>
 											<tr class="row"  >
 												<td>
+													<div class="label price">
+														<span>Display text:<font color="red">*</font> </span>
+													</div>
+												</td>
+												<td class="input">
+													<div class="price">
+														<input type="text" name="display_text" value="{$display_text}"/>
+													</div>
+												</td>											
+											</tr>				
+											<tr class="row">
+												<td>
 													<div class="label">
-														<span>Location:</span>
+														<span>Content:<font color="red">*</font> </span>
 													</div>
 												</td>
 												<td class="input">
 													<div >
-														<input type="text" name="location" value="{$location}"/>
+														<textarea type="text" name="content" >{$content}</textarea>
 													</div>
 												</td>											
-											</tr>											
+											</tr>
+											
 										</table>										
 									</div>
 									<div class="add buttons">
-											<input type="submit" value="{if $action == 'add'}Add{else}Save{/if}" name="save"> | 
-											{if $action == 'edit'}
-												<input type="button" value="Remove" name="remove" onclick=""> |
-											{/if}
+											<input type="submit" value="Save" name="save"> | 
 											<input type="reset" value="Reset" name="reset">
 										</div>
 								</div>
