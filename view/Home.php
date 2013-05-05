@@ -35,7 +35,7 @@
     <div class="homeMenu">        
         <div class="menuSide">
             <ul class="ul">
-                <li class="menu_selected"><a href="#">Home</a></li> <!-- just home-->
+                <li class="menu_selected"><a href="#">Home na sad ni</a></li> <!-- just home-->
                 <li><a href="{$base_url}Home/services">Services</a></li>
                 <li><a href="{$base_url}Home/about_us">About Us</a></li>
                 <li><a href="{$base_url}Home/clients">Clients</a></li>
