@@ -73,19 +73,21 @@ function slideToLeft() {
 	if(_slide.getImageIndex() >= 0) {
 
 		if(_slide.getImageIndex() < _slide.getImage().length - 1) {
-			$('.pic_container').animate(
+			$('.pic_container #img_' + _slide.getImageIndex()).animate(
 				{
-			    	marginLeft: '-=960'
+			    	marginLeft: '-=960',
+			    	opacity:0
 			  	}, 
-		  		5000,
+		  		3000,
 		  		"easeInOutCirc"
 		  	);
 
 		  	_slide.setImageIndex( _slide.getImageIndex() + 1);
 		} else {
 			_slide.setImageIndex(0);
-			$('.pic_container').animate({
-		    	marginLeft: '0'
+			$('.pic_container img').animate({
+		    	marginLeft: '0',
+		    	opacity:1
 		  	}, 
 		  	2000);	
 		}
