@@ -5,6 +5,8 @@
 
 	class Visa_Working_Permit extends Controller { 
 		public function main(){
+			echo 'dri lang';
+			die();
 			if(!isset($this->session->sessionData['user_id']) || $this->session->sessionData['type'] != 1)
 				$this->load->controller('Auth/Login');
 
