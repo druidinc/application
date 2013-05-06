@@ -60,8 +60,12 @@ Slide.prototype.startSlide = function(slide){
 	_slide = slide;
 	$('.pic_container').width(960 * slide.getImage().length);
 	for(index = 0; index < slide.getImage().length; index++) {
-		$('.pic_container').append('<img id="img_' + index + '" src="' + slide.getImage()[index] + '"   width="960px" height="300px" onload="$(\'.banner_loader\').hide();">');
+		$('.pic_container').append('<img id="img_' + index + '" src="' + slide.getImage()[index] + '"   width="960px" height="300px"  onload="$(\'.banner_loader\').hide();">');		
 	}
+
+	$('.pic_container img').css({opacity:0}).hide();
+	$('.pic_container #img_0').css({opacity:1}).show();
+	
 	this._slideId = setInterval("slideToLeft()",6000);
 }
 
@@ -75,21 +79,44 @@ function slideToLeft() {
 		if(_slide.getImageIndex() < _slide.getImage().length - 1) {
 			$('.pic_container #img_' + _slide.getImageIndex()).animate(
 				{
-			    	marginLeft: '-=960',
-			    	opacity:0
-			  	}, 
-		  		3000,
-		  		"easeInOutCirc"
-		  	);
+					opacity:0
+				},
+				{
+					duration:3000,
+					queue:false,
+				}
+			);
+
+			$('.pic_container #img_' + (_slide.getImageIndex() + 1)).show().animate(
+				{
+					opacity:1
+				},
+				{
+					duration:3000,
+					queue:false,
+				}
+			);
+
+			$('.animation').animate(
+				{
+					scrollLeft: '+=' + (960),
+				},
+				{	
+					duration:3000,
+					queue:false,
+					easing:"easeInOutCirc"
+				}
+			);
 
 		  	_slide.setImageIndex( _slide.getImageIndex() + 1);
 		} else {
+
 			_slide.setImageIndex(0);
-			$('.pic_container img').animate({
-		    	marginLeft: '0',
-		    	opacity:1
+			$('.pic_container #img_0').css({opacity:1});
+			$('.animation').animate({
+		    	scrollLeft: '0',
 		  	}, 
-		  	2000);	
+		  	1000);	
 		}
 
 	} 
