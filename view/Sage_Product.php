@@ -102,7 +102,7 @@
                         <div><img src="{$image}/{$product['image']}" class="prod_image"></div>
                         <p>{$product['description']}</p>
                         <p>&nbsp;</p>
-                        <h4 class="price">Price: Php {$product['price']}</h4>
+                        <h4 class="price">Price: USD {$product['price']}</h4>
                         <div class="inquire_button"><a href="{$base_url}Home/sageInquiries?id={$product['id']}">Inquire</a></div>
                     </div>
                 </div>            

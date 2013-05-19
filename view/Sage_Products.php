@@ -104,7 +104,7 @@
                                 <td class="label">{$product['brief_description']}</td>
                             </tr>
                             <tr>
-                                <td class="label price">Price: Php {$product['price']}</td>
+                                <td class="label price">Price: USD {$product['price']}</td>
                             </tr>
                             <tr>
                                 <td colspane="2"><a href="{$base_url}Home/sageProduct?id={$product['id']}" class="readMore">Read More</a></td>
