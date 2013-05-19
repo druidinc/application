@@ -32,7 +32,6 @@
 	<div class="topColumn">
     	<div class="logo">
         	<img src="{$image}/logo.png" />
-            <img src="{$image}/jca_logo2.jpg" />
         </div><!--End of logo-->
         <div class="searchBar">
             <p>Searching....</p>
