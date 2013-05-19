@@ -7,6 +7,7 @@
 		private $homeModel;
 		private $pages;
 		private $products;
+		private $sample;
 
 		public function main(){
 
