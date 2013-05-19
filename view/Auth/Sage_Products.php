@@ -117,6 +117,7 @@
 												<td>
 													<div class="label price">
 														<span>Price (USD):<font color="red">*</font> </span>
+														
 													</div>
 												</td>
 												<td class="input">
