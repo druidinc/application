@@ -19,7 +19,6 @@
 </head>
 
 <body>
-<h1>This is a sample</h1>
 <div class="topWrap">
 	<div class="topColumn">
     	<div class="logo">
