@@ -37,6 +37,7 @@
             <ul class="ul">
                 <li><a href="{$base_url}">Home</a></li>                
                 <li><a href="{$base_url}Home/services">Services</a></li>
+                <li><a href="{$base_url}Home/Products">Products</a></li>
                 <li ><a href="#">About Us</a></li>
                 <li class="menu_selected"><a href="#">Clients</a></li>
                 <li><a href="{$base_url}Home/ContactUs">Contact Us</a></li>            
@@ -166,31 +167,18 @@
 
 
     <div class="ourPartners">
-    	<div class="title"><h3>Our Partners</h3></div>
+        <div class="title"><h3>Our Partners</h3></div>
         <div class="partnersBox1">
-            <p><a href="#">Employment Visa Philippines</a></p>
-            <p><a href="#">Work Visa Philippines</a></p>
-            <p><a href="#">AVEG Visa Philippines</a></p>
-            <p><a href="#">Visa Consulting Philippines</a></p>
+            <p><a href="http://www.dti.gov.ph" target="blank">Department of Trade & Industry</a></p>
+            <p><a href="http://www.bir.gov.ph" target="blank"> Bureau of Internal Revenue</a></p>
         </div>
         <div class="partnersBox1">
-            <p><a href="#">Employment Visa Philippines</a></p>
-            <p><a href="#">Work Visa Philippines</a></p>
-            <p><a href="#">AVEG Visa Philippines</a></p>
-            <p><a href="#">Visa Consulting Philippines</a></p>      
+            <p><a href="#">Register of Deeds and Maritime Industry</a></p>
+            <p><a href="http://www.immigration.gov.ph" target="blank">Bureau of Immigration Commission</a></p>                   
         </div>
         <div class="partnersBox1">
-            <p><a href="#">Employment Visa Philippines</a></p>
-            <p><a href="#">Work Visa Philippines</a></p>
-            <p><a href="#">AVEG Visa Philippines</a></p>
-            <p><a href="#">Visa Consulting Philippines</a></p>        
-        </div>
-        <div class="partnersBox1">
-            <p><a href="#">Employment Visa Philippines</a></p>
-            <p><a href="#">Work Visa Philippines</a></p>
-            <p><a href="#">AVEG Visa Philippines</a></p>
-            <p><a href="#">Visa Consulting Philippines</a></p>       
-        </div><!--End of partnersBox1-4 --> 
+            <p><a href="http://www.sec.gov.ph" target="blank">Securities and Exchange Commission</a></p>        
+        </div> 
         <div class="clearfix" style="clear:both"></div>                       
     </div><!--End of ourPartners-->
 </div><!--End of bodyWrap-->

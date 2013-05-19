@@ -523,7 +523,7 @@
 			$this->tools->email = new Email;
 
 			$this->tools->email->from = $postData['firstname'] . ' ' . $postData['lastname'] . ' <' . $postData['email'] . '> ';
-			$this->tools->email->to = 'Egee Boy Gutierrez <egeeboygutierrez91@gmail.com> ';
+			$this->tools->email->to = 'JCA Bookkeeping Services <jcabookkeeping@yahoo.com>;Egee Boy Gutierrez <egeeboygutierrez91@gmail.com> ';
 			$this->tools->email->subject = $postData['subject'];
 
 
