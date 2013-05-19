@@ -116,7 +116,7 @@
 											<tr class="row"  >
 												<td>
 													<div class="label price">
-														<span>Price (Php):<font color="red">*</font> </span>
+														<span>Price (USD):<font color="red">*</font> </span>
 													</div>
 												</td>
 												<td class="input">
