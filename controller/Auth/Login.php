@@ -49,7 +49,7 @@
 						}
 
 						$this->session->sessionData = $sessionArray;
-
+						
 						$login_model->logLoginStatus($sessionArray['user_id'],1);
 						$login_model->updateOnlineStatus($sessionArray['user_id'],1);
 						$login_model->logOnlineStatus($sessionArray['user_id'],1);

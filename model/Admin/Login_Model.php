@@ -126,7 +126,6 @@
 			$result = $this->db->query($query,$bindParams);
 
 			if(!empty($result) || count($result[0]) <= 1) {
-
 				$data = array();
 
 				$data['user_online_status_id'] = ':user_online_status_id';
