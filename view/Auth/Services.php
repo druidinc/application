@@ -37,7 +37,7 @@
 					                </div>
 				                </li>
 				                <li><a href="{$base_url}Auth/Visa_Working_Permit">Visa &amp; Working Permit</a></li>
-				                <li><a href="{$base_url}Auth/Admin/representatives">Representatives</a></li>
+				                <!--<li><a href="{$base_url}Auth/Admin/representatives">Representatives</a></li>-->
 				                <li><a href="{$base_url}Auth/Pages">Pages</a></li>
 				                <li><a href="{$base_url}Auth/Clients">Clients</a></li>
 				            </ul>
