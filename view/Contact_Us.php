@@ -23,11 +23,11 @@
 <div class="topWrap">
 	<div class="topColumn">
     	<div class="logo">
-        	<img src="{$image}/logo.png" />
+        	<img src="{$image}/jca_final_logo.png" />
         </div><!--End of logo-->
-        <div class="searchBar">
+        <!--<div class="searchBar">
             <p>Searching....</p>
-        </div><!--End of searhBar-->
+        </div>--><!--End of searhBar-->
     </div><!--End of topColumn-->
 </div><!--End of topWrap-->
 <!-- ------------------------------------------------------------------------------- -->
