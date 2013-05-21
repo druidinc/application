@@ -42,7 +42,7 @@
 				        </div><!--closing for menuSide-->
 				    </div>
 				    <div class="greetings">
-				    	Welcome Name | <a href="{$base_url}Auth/Logout?token={$token}">Logout</a>
+				    	Welcome Janette | <a href="{$base_url}Auth/Logout?token={$token}">Logout</a>
 				    </div>
 				</div>
 			</div>
