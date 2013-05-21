@@ -78,5 +78,10 @@
 			</div>
 			<div class="footer"></div>
 		</div>
+		<script type="text/javascript" src="{$javascript}/chat.js"></script>
+		<script type="text/javascript">
+			listen('{$base_url}');
+
+		</script>
 	</body>
 </html>

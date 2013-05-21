@@ -65,9 +65,11 @@ function prev(width) {
 	});
 }
 
-function displayChat(){
+function displayChat(base_url){
+	var url = base_url;
+	
 	if(chatClicked == 0) {
-		t = setInterval(function(){getOnlineReps()},500);
+		t = setInterval(function(){getOnlineReps(url)},500);
 		/*$('.banner_loader').ajaxStart(function(){
 			$(this).hide();
 			$('.pic_container').show();
@@ -107,12 +109,11 @@ function displayChat(){
 	}
 }
 
-function getOnlineReps(){
+function getOnlineReps(url){
 	var protocol = window.location.protocol;
 	//var host = window.locaton.hostname;
 	//console.log(window.location.pathname);
-
-	var base_url = window.location.hostname + window.location.pathname;
+	var base_url = url;
 	$.ajax({
 		url: base_url + 'Chat/getOnline',
 		type:"POST",

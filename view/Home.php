@@ -154,7 +154,7 @@
                 </ul> 
             </div>
         </div>
-        <div class="chat_button_panel" onclick="displayChat()">
+        <div class="chat_button_panel" onclick="displayChat('{$base_url}')">
             <span class="chat_button_drawer">Chat</span>
         </div>
         <div class="clearfix" style="clear:both"></div>  
