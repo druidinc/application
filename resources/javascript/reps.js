@@ -30,13 +30,13 @@ function initTinyMCE(){
 		theme_advanced_resizing : false,
 
 		// Example word content CSS (should be your site CSS) this one removes paragraph margins
-		content_css : "{$css}/tiny_mce/word.css",
+		content_css : "application/resources/css/tiny_mce/word.css",
 
 		// Drop lists for link/image/media/template dialogs
-		template_external_list_url : "{$javascript}/tiny_mce/lists/template_list.js",
-		external_link_list_url : "{$javascript}/tiny_mce/lists/link_list.js",
-		external_image_list_url : "{$javascript}/tiny_mce/lists/image_list.js",
-		media_external_list_url : "{$javascript}/tiny_mce/lists/media_list.js",
+		template_external_list_url : "application/resources/javascript/tiny_mce/lists/template_list.js",
+		external_link_list_url : "application/resources/javascript/tiny_mce/lists/link_list.js",
+		external_image_list_url : "application/resources/javascript/tiny_mce/lists/image_list.js",
+		media_external_list_url : "application/resources/javascript/tiny_mce/lists/media_list.js",
 
 
 		width: "100%"
