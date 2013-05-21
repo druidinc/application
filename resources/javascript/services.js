@@ -11,7 +11,7 @@ $(document).ready(function(){
 	
 	progress = document.querySelector('.percent');
 
-	initTinyMce();
+	
 
 
 	/*$('.fade-box').ajaxStart(function(){

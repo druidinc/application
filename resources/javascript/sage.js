@@ -5,7 +5,6 @@ $(document).ready(function(){
 
 	
 	progress = document.querySelector('.percent');
-	initTinyMce();
 });
 
 $('html').mouseover(function(e){

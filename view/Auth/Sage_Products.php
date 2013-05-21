@@ -169,5 +169,8 @@
 			</div>
 			<div class="footer"></div>
 		</div>
+		<script type="text/javascript">
+			initTinyMce();
+		</script>
 	</body>
 </html>

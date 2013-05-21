@@ -171,6 +171,10 @@
 				$('.fade-box').fadeOut(2000);
 			</script>
 		{/if}
+
+		<script type="text/javascript">
+			initTinyMce();
+		</script>
 	</body>
 	
 </html>
