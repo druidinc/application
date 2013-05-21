@@ -12,6 +12,7 @@
 	</head>
 
 	<body>
+		Admin
 		<div class="wrapper">
 			<div class="header">
 				<div class="header-wrapper">
