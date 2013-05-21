@@ -19,7 +19,6 @@
 </head>
 
 <body>
-    home
 <div class="topWrap">
 	<div class="topColumn">
     	<div class="logo">
