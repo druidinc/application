@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>JCABookkeeping Services</title>
+    <link rel="shortcut icon" href="{$base_url}favicon.ico" type="image/x-icon"/>
     <link href="{$css}/default.css" type="text/css" rel="stylesheet" />
     <link href="{$css}/style.css" type="text/css" rel="stylesheet" />
     <link href="{$css}/contactUs.css" type="text/css" rel="stylesheet" />

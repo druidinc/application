@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>JCA Live Inquiry</title>
-
+		<link rel="shortcut icon" href="{$base_url}favicon.ico" type="image/x-icon"/>
 		<link rel="stylesheet" type="text/css" href="{$css}/default.css">
 		<link rel="stylesheet" type="text/css" href="{$css}/chat.css">
 

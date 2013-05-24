@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>JCABookkeeping Services</title>
+<link rel="shortcut icon" href="{$base_url}favicon.ico" type="image/x-icon"/>
 <link href="{$css}/default.css" type="text/css" rel="stylesheet" />
 <link href="{$css}/style.css" type="text/css" rel="stylesheet" />
 <link href="{$css}/contact_widget.css" type="text/css" rel="stylesheet" />
@@ -35,7 +36,7 @@
             <ul class="ul">
                 <li><a href="{$base_url}">Home</a></li>                
                 <li><a href="{$base_url}Home/services">Services</a></li>
-                <li><a href="{$base_url}Home/Products">Products</a></li>
+                <li><a href="{$base_url}Home/sageProducts">Products</a></li>
                 <li class="menu_selected"><a href="#">About Us</a></li>
                 <li><a href="{$base_url}Home/clients">Clients</a></li>
                 <li><a href="{$base_url}Home/ContactUs">Contact Us</a></li>            
