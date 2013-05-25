@@ -40,7 +40,7 @@
                 <li><a href="{$base_url}">Home</a></li>                
                 <li><a href="{$base_url}Home/services">Services</a></li>
                 <li><a href="{$base_url}Home/sageProducts">Products</a></li>
-                <li ><a href="#">About Us</a></li>
+                <li><a href="{$base_url}Home/about_us">About Us</a></li>
                 <li class="menu_selected"><a href="#">Clients</a></li>
                 <li><a href="{$base_url}Home/ContactUs">Contact Us</a></li>            
             </ul>
