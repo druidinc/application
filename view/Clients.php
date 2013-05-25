@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>JCABookkeeping Services</title>
 <link rel="shortcut icon" href="{$base_url}favicon.ico" type="image/x-icon"/>
+<link rel="icon" href="{$base_url}favicon.ico" type="image/x-icon">
 <link href="{$css}/default.css" type="text/css" rel="stylesheet" />
 <link href="{$css}/style.css" type="text/css" rel="stylesheet" />
 <link href="{$css}/contact_widget.css" type="text/css" rel="stylesheet" />
@@ -24,11 +25,11 @@
 	<div class="topColumn">
     	<div class="logo">
         	<img src="{$image}/logo.png" />
-            <img src="{$image}/jca_logo2.jpg" />
+            <!--<img src="{$image}/jca_logo2.jpg" />-->
         </div><!--End of logo-->
-        <div class="searchBar">
+        <!--<div class="searchBar">
             <p>Searching....</p>
-        </div><!--End of searhBar-->
+        </div>--><!--End of searhBar-->
     </div><!--End of topColumn-->
 </div><!--End of topWrap-->
 <!-- ------------------------------------------------------------------------------- -->
