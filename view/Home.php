@@ -26,9 +26,19 @@
     	<div class="logo">
         	<img src="{$image}/jca_final_logo.png" />
         </div><!--End of logo-->
-        <!--<div class="searchBar">
-            <p>Searching....</p>
-        </div>--><!--End of searhBar-->
+        <script>
+          (function() {
+            var cx = '017924416408079978860:fluze4jzxzk';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+          })();
+        </script>
+        <gcse:search></gcse:search>
     </div><!--End of topColumn-->
 </div><!--End of topWrap-->
 <!-- ------------------------------------------------------------------------------- -->
