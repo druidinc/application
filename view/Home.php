@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="google-site-verification" content="MhMx3qusd7LRSHGzNbq9wDnkUwK6eUvmkYfnCnkbpaQ" />
 <title>JCABookkeeping Services</title>
     <link rel="shortcut icon" href="{$base_url}favicon.ico" type="image/x-icon"/>
     <link rel="icon" href="{$base_url}favicon.ico" type="image/x-icon">
@@ -26,19 +27,21 @@
     	<div class="logo">
         	<img src="{$image}/jca_final_logo.png" />
         </div><!--End of logo-->
-        <script>
-          (function() {
-            var cx = '017924416408079978860:fluze4jzxzk';
-            var gcse = document.createElement('script');
-            gcse.type = 'text/javascript';
-            gcse.async = true;
-            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                '//www.google.com/cse/cse.js?cx=' + cx;
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(gcse, s);
-          })();
-        </script>
-        <gcse:search></gcse:search>
+        <div class="searchBar">
+            <script>
+              (function() {
+                var cx = '017924416408079978860:mhdcfjgmngo';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                    '//www.google.com/cse/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+            <gcse:search></gcse:search>
+        </div><!--End of searhBar-->
     </div><!--End of topColumn-->
 </div><!--End of topWrap-->
 <!-- ------------------------------------------------------------------------------- -->
