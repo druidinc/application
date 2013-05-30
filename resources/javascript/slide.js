@@ -7,7 +7,23 @@
 */
 
 var _slide;
+var slide;
 var ajaxCall = 0;
+var imageWidth = 960;
+
+
+window.onresize = function () {
+	var animationWidth = $('.animation').width();
+
+	imageWidth = animationWidth;
+
+
+	$('.pic_container img').css({width:imageWidth + "px"});
+}
+
+$(document).ready(function(){
+	imageWidth  = $('.animation').width();
+});
 
 function slider(base_url,image_url){
 	slide = new Slide();
@@ -58,9 +74,9 @@ function Slide(){
 //method to start slide animation
 Slide.prototype.startSlide = function(slide){
 	_slide = slide;
-	$('.pic_container').width(960 * slide.getImage().length);
+	$('.pic_container').width(imageWidth * slide.getImage().length);
 	for(index = 0; index < slide.getImage().length; index++) {
-		$('.pic_container').append('<img id="img_' + index + '" src="' + slide.getImage()[index] + '"   width="960px" height="300px"  onload="$(\'.banner_loader\').hide();">');		
+		$('.pic_container').append('<img id="img_' + index + '" src="' + slide.getImage()[index] + '" width="' + imageWidth + 'px" height = "300px"   onload="$(\'.banner_loader\').hide();">');		
 	}
 
 	$('.pic_container img').css({opacity:0}).hide();
@@ -69,9 +85,7 @@ Slide.prototype.startSlide = function(slide){
 	this._slideId = setInterval("slideToLeft()",6000);
 }
 
-function hideImageLoadingBar(){
 
-}
 
 function slideToLeft() {
 	if(_slide.getImageIndex() >= 0) {
@@ -99,7 +113,7 @@ function slideToLeft() {
 
 			$('.animation').animate(
 				{
-					scrollLeft: '+=' + (960),
+					scrollLeft: '+=' + (imageWidth),
 				},
 				{	
 					duration:3000,

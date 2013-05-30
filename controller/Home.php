@@ -11,19 +11,16 @@
 
 		public function main(){
 
-			$view_data = array();
+			//get the models
+			$this->_pages = $this->load->model('Admin/Pages_Model');
+			$this->_services = $this->load->model('Admin/Services_Model');
 
+			$pageData = $this->_pages->getPage('d',1);
 
-			$this->homeModel = $this->load->model('Home_Model');
-			$this->services = $this->load->model('Admin/Services_Model');
-			$this->pages = $this->load->model('Admin/Pages_Model');
-			$this->reps = $this->load->model('Admin/Representatives_Model');
-
-			
-			
-
-			$view_data['services'] = $this->services->getAllServices();
-			$pageData = $this->pages->getPage('d',1);
+			$view_data = array(
+				"page" => "home",
+				"title" => "JCA Bookkeeping Services"
+			);
 
 			foreach ($pageData as $data) {
 				$contents = json_decode($data['content']);
@@ -34,8 +31,7 @@
 				}
 			}
 
-
-			$pageData = $this->pages->getPage('d',3);
+			$pageData = $this->_pages->getPage('d',3);
 
 			foreach ($pageData as $data) {
 				$contents = json_decode($data['content']);
@@ -48,10 +44,10 @@
 				}
 			}
 
-			$view_data['online_reps'] = $this->reps->getOnlineReps();
+			$view_data['services'] = $this->_services->getAllServices();
 
-			$this->load->view('Home',$view_data);
-
+			
+			$this->load->view("Home", $view_data);
 
 		}
 

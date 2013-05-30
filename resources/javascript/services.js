@@ -53,6 +53,8 @@ $(document).ready(function(){
 
 	//var int=self.setTimeout(function(){resizeImage()},1);
 
+	
+
 });
 
 $('html').mouseover(function(e){

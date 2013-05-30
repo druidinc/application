@@ -2,7 +2,7 @@
 	
 	if(!defined('SERVER_ROOT'))
 		die ('Unauthorized access. File forbidden.');
-
+	header('Access-Control-Allow-Origin: *');
 	class Slide extends Controller {
 		public function main(){
 			if ($handle = opendir($this->image_resource . '/slide')) {

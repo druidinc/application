@@ -1,179 +1,94 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="google-site-verification" content="MhMx3qusd7LRSHGzNbq9wDnkUwK6eUvmkYfnCnkbpaQ" />
-<title>JCABookkeeping Services</title>
-    <link rel="shortcut icon" href="{$base_url}favicon.ico" type="image/x-icon"/>
-    <link rel="icon" href="{$base_url}favicon.ico" type="image/x-icon">
-    <link href="{$css}/default.css" type="text/css" rel="stylesheet" />
-    <link href="{$css}/style.css" type="text/css" rel="stylesheet" />
-    <link href="{$css}/contactUs.css" type="text/css" rel="stylesheet" />
-    <link href="{$css}/contact_widget.css" type="text/css" rel="stylesheet" />
+<!DOCTYPE html>
+<!-- HTML5 Mobile Boilerplate -->
+<!--[if IEMobile 7]><html class="no-js iem7"><![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+	<head>
+		{include file="_shared/_head.php" }
+	<body>
+		<div id="wrapper">
+			<div id="headcontainer">
+				{include file="_shared/_header.php" }				
+			</div>
+			
+			<div id="maincontentcontainer">
 
-    <script type="text/javascript" src="{$javascript}/jquery.min.js"></script>
-    <script type="text/javascript" src="{$javascript}/home.js"></script>
-    <script type="text/javascript" src="{$javascript}/slide.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            slider('{$base_url}','{$image}');
-        });
-    </script>
-</head>
+				<!-- First Row: Mission - Vision and Contacts -->
+				<div class="section group panel">
+					<div class="col span_3_of_5">
+						<div class="section group">
+							<div class="col span_2_of_2 left">
+								<h4 >Mission</h4>
+								{$mission}
+							</div>
+						</div>
 
-<body>
-<div class="topWrap">
-	<div class="topColumn">
-    	<div class="logo">
-        	<img src="{$image}/jca_final_logo.png" />
-        </div><!--End of logo-->
-        <div class="searchBar">
-            <script>
-              (function() {
-                var cx = '017924416408079978860:mhdcfjgmngo';
-                var gcse = document.createElement('script');
-                gcse.type = 'text/javascript';
-                gcse.async = true;
-                gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                    '//www.google.com/cse/cse.js?cx=' + cx;
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(gcse, s);
-              })();
-            </script>
-            <gcse:search></gcse:search>
-        </div><!--End of searhBar-->
-    </div><!--End of topColumn-->
-</div><!--End of topWrap-->
-<!-- ------------------------------------------------------------------------------- -->
-<div class="menuWrap">
-    <div class="homeMenu">        
-        <div class="menuSide">
-            <ul class="ul">
-                <li class="menu_selected"><a href="#">Home</a></li> <!-- just home-->
-                <li><a href="{$base_url}Home/services">Services</a></li>
-                <li><a href="{$base_url}Home/sageProducts">Products</a></li>
-                <li><a href="{$base_url}Home/about_us">About Us</a></li>
-                <li><a href="{$base_url}Home/clients">Clients</a></li>
-                
-                <li><a href="{$base_url}Home/ContactUs">Contact Us</a></li>            
-            </ul>
-        </div><!--closing for menuSide-->
-    </div><!--closing for homeMenu-->
-</div><!--End of menuWrap-->
-<!-- ------------------------------------------------------------------------------- -->
-<div class="animationWrap">
-	<div class="animation">
-		<div class="pic_container"></div>
-        <div class="banner_loader"><img src="{$image}/loader-green.gif"></div>
-    </div><!--End of animation-->
-</div><!--End of animationWrap-->
-<!-- ------------------------------------------------------------------------------- -->
-<div class="bodyWrap">
-	<div class="bodyColumn1">
-    	<h5>Mission</h5>
-        <p class="misDescription">
-        	{$mission} 
-        </p>
-    	<h5>Vision</h5>
-        <p class="visDescription">
-        	{$vision}         
-        </p> 
-   
-    </div><!--End of bodyColumn-->
-	<div class="bodyColumn2">
-        <div class="galleryBody">
-            <div class="contactUsWrapper">
-                <div class="contactTitle">
-                    Contact Us
-                </div><!--End of contactTitle-->
-                <div class="contactData">
-                    <div class="company_name">{$contact_company_name}</div>
-                    <p class="address">{$contact_address}</p>
-                    <p class="mail contacts">
-                        <strong>Mail:</strong>  <br/>
-                        <span class="contact_row"><a href="mailto:{$contact_email}">{$contact_email}</a></span>  <br/>
-                        <span class="contact_row"><a href="mailto:jcabs2007@gmail.com">jcabs2007@gmail.com</a></span>
-                    </p>
-                    <p class="contacts">
-                        <strong>Contacts:</strong>  <br/> 
-                        {for $contact = 0 to count($contact_contacts) - 1}
-                            <span class="contact_row">{$contact_contacts[$contact]}</span> <br/>                            
-                        {/for}
-                    </p>
-                </div><!--End of contactData-->
-            </div><!--End of contactUsWrapper-->
-        </div><!--End of galleryBody-->
-    </div><!--End of bodyColumn-->
-    <div class="clear" style="clear:both;"></div>
-    <div class="services">
-    	<div class="title">
-            <h3>
-            	Services Offered
-            </h3>
-        </div><!--End of servicesTitle-->
+						<div class="section group">
+							<div class="col span_2_of_2 left">
+								<h4 >Vision</h4>
+								{$vision}
+							</div>
+						</div>
+					</div>
 
-        <div class="frontEndImage" onmouseover="display('nextPrevious')" onmouseout="hide('nextPrevious')">
+					<div class="col span_2_of_5 float_right">
+						<div class="section group">
+							<div class="col span_2_of_2 left">
+								<h4 class="title">{$contact_company_name}</h4>
+								{$contact_address}
+								<div class="section group panel">
+									<div class ="col span_1_of_4">Mail:</div>
+									<div class ="col span_3_of_4"><a href="mailto:{$contact_email}" class = "email" target="_new">{$contact_email}</a></div>									
+								</div>
+								<div class="section group panel">
+									<div class ="col span_1_of_4">Contacts:</div>
+									<div class ="col span_3_of_4">
+										{for $contact = 0 to count($contact_contacts) - 1}
+				                            <div class ="col span_1_of_2 contact">{$contact_contacts[$contact]} </div>		                            			                          
+				                        {/for}
+			                        </div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--End First Row: Mission - Vision and Contacts -->
+				
+				<!-- Second Row: Services -->
+				<div class = "section group panel">
+					<div class = "col span_2_of_2">
+						<h3 class = "title">Services</h3>
+					</div>
 
-            <div class="frontEndTable" style="width:{$services|@count * 240}px;">
-                {section name=serviceIndex loop=$services}
-                    <div class="img">                  
-                        <a href="{$base_url}Home/service?cat_id={$services[serviceIndex].category_id}&subcat_id={$services[serviceIndex].id}">
-                            <img src="{$image}/{$services[serviceIndex].image}" title="{$services[serviceIndex].name}" alt="{$services[serviceIndex].name}"/>
-                            <div class="desc">{$services[serviceIndex].name}</div>
-                        </a>                         
-                    </div>
-                {sectionelse}
-                    No Services found
-                {/section}                
-            </div>
-            <div class="nextPrevious">
-                <div class="previous" onclick="prev({$services|@count * 240})">&lt;</div>
-                <div class="next"  onclick="next({$services|@count * 240})">&gt;</div>
-            </div>        
-     </div><!--End of frontEndImage-->
-    </div><!--End of services-->
-    <div class="ourPartners">
-        <div class="title"><h3>Our Partners</h3></div>
-        <div class="partnersBox1">
-            <p><a href="http://www.dti.gov.ph" target="blank">Department of Trade & Industry</a></p>
-            <p><a href="http://www.bir.gov.ph" target="blank"> Bureau of Internal Revenue</a></p>
-        </div>
-        <div class="partnersBox1">
-            <p><a href="#">Register of Deeds and Maritime Industry</a></p>
-            <p><a href="http://www.immigration.gov.ph" target="blank">Bureau of Immigration Commission</a></p>                   
-        </div>
-        <div class="partnersBox1">
-            <p><a href="http://www.sec.gov.ph" target="blank">Securities and Exchange Commission</a></p>        
-        </div> 
-        <div class="clearfix" style="clear:both"></div>                       
-    </div><!--End of ourPartners-->
-</div><!--End of bodyWrap-->
-<div class="footer">
+					<div class="section group panel services_frame" onmouseover="display('.services_frame .navigation')" onmouseout="hide('.services_frame .navigation')">
+						<div class="services_container" >
 
-</div><!--End of footer-->
-<div class="copyrights">
-    <p>All Rights Reserved JCA Bookkeeping Services 2013</p>
-</div><!--End of copyrights-->
+							{section name=serviceIndex loop=$services}
+								<a href="{$base_url}Home/service?cat_id={$services[serviceIndex].category_id}&subcat_id={$services[serviceIndex].id}">
+									<div class="col image_container">
+										<img src="{$image}/{$services[serviceIndex].image}" title="{$services[serviceIndex].name}" alt="{$services[serviceIndex].name}" style = "width:100%; height: 148px;">
+										<div class="col span_1_of_2 service_caption" >{$services[serviceIndex].name}</div>
+									</div>
+								</a>
+			                {sectionelse}
+			                    No Services found
+			                {/section} 
+						</div>
+						<div class="navigation col span_2_of_2">
+							<div class = "section group">
+								<div class="col span_1_of_2 left float_left nav_button previous" onclick="prev($('.services_container').width())">&lt;</div>
+								<div class="col span_1_of_2 right float_right nav_button next" onclick="next($('.services_container').width())">&gt;</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-<div class="chat_panel">
-    <div class="chat_inner_panel">
-        <div class="chat_online_panel">
-            <div class="chat_header">Support Representatives</div>
-            <div class="chat_online_list">
-                <ul id="chat_online_list_ul">
-                {foreach from=$online_reps item=reps}
-                    {if $reps['status'] == 'Online'}
-                        <li>{$reps['name']}</li>
-                    {/if}
-                {/foreach}
-                </ul> 
-            </div>
-        </div>
-        <div class="chat_button_panel" onclick="displayChat('{$base_url}')">
-            <span class="chat_button_drawer">Chat</span>
-        </div>
-        <div class="clearfix" style="clear:both"></div>  
-    </div>
-</div>
-</body>
+			</div>
+			<div id="footercontainer">
+				{include file="_shared/_footer.php"}
+			</div>
+		</div>
+	</body>
+	{include file="_shared/_foot.php"}
 </html>
