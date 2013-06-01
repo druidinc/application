@@ -6,7 +6,7 @@
 	<head>
 		{include file="_shared/_head.php" }
 	<body>
-		This is my home
+		This is my home and again
 		<div id="wrapper">
 			<div id="headcontainer">
 				{include file="_shared/_header.php" }				
