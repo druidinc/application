@@ -1,174 +1,56 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>JCABookkeeping Services</title>
-<link rel="shortcut icon" href="{$base_url}favicon.ico" type="image/x-icon"/>
-<link rel="icon" href="{$base_url}favicon.ico" type="image/x-icon">
-<link href="{$css}/default.css" type="text/css" rel="stylesheet" />
-<link href="{$css}/style.css" type="text/css" rel="stylesheet" />
-<link href="{$css}/sage_products.css" type="text/css" rel="stylesheet" />
-<link href="{$css}/contact_widget.css" type="text/css" rel="stylesheet" />
-<link href="{$css}/contactUs.css" type="text/css" rel="stylesheet" />
-
-<script type="text/javascript" src="{$javascript}/jquery.min.js"></script>
-<script type="text/javascript" src="{$javascript}/slide.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            slider('{$base_url}','{$image}');
-        });
-    </script>
-</head>
-
-<body>
-<div class="topWrap">
-	<div class="topColumn">
-    	<div class="logo">
-        	<img src="{$image}/jca_final_logo.png" />
-        </div><!--End of logo-->
-        <!--<div class="searchBar">
-            <p>Searching....</p>
-        </div>--><!--End of searhBar-->
-    </div><!--End of topColumn-->
-</div><!--End of topWrap-->
-<!-- ------------------------------------------------------------------------------- -->
-<div class="menuWrap">
-    <div class="homeMenu">        
-        <div class="menuSide">
-            <ul class="ul">
-                <li><a href="{$base_url}">Home</a></li>                
-                <li><a href="{$base_url}Home/services">Services</a></li>
-                <li class="menu_selected"><a href="{$base_url}Home/sageProducts">Products</a></li>
-                <li><a href="{$base_url}Home/about_us">About Us</a></li>
-                <li><a href="{$base_url}Home/clients">Clients</a></li>
-                <li><a href="{$base_url}Home/ContactUs">Contact Us</a></li>            
-            </ul>
-        </div><!--closing for menuSide-->
-    </div><!--closing for homeMenu-->
-</div><!--End of menuWrap-->
-<!-- ------------------------------------------------------------------------------- -->
-<div class="animationWrap">
-	<div class="animation">
-		<div class="pic_container"></div>
-        <div class="banner_loader"><img src="{$image}/loader-green.gif"></div>
-    </div><!--End of animation-->
-</div><!--End of animationWrap-->
-<!-- ------------------------------------------------------------------------------- -->
-<div class="bodyWrap">
-	
-    <div class="page02Body">
-      <div class="page02ColumnOne">
-        <ul class="verticalMenu">
-            {foreach from=$services item=categories}
-                <li class="verticalMenuTitle" id="{'cat_'|cat:$categories.cat_id}">{$categories.cat_name}</li>
-
-                {foreach from=$categories.subcat item=subcategories}
-                    <li class="{if $subcategories.subcat_name == 'Peachtree (Sage 50)'}category_selected{else}none{/if}">
-                        <a href="{$base_url}Home/service?cat_id={$categories.cat_id}&subcat_id={$subcategories.subcat_id}" id="subcat_{$subcategories.subcat_id}_{$categories.cat_id}">
-                            {$subcategories.subcat_name}
-                        </a>
-                    </li>
-                {/foreach}
-            {/foreach}                            
-        </ul>
-        <!--contact widget-->
-        <ul class="verticalMenu contact_widget">
-            <li class="verticalMenuTitle">Contact Us</li>
-            <li>
-                <div class="company_name">{$contact_company_name}</div>
-                <p class="address">{$contact_address}</p>
-                <p class="mail contacts">
-                    <strong>Mail:</strong>  <br/>
-                    <span class="contact_row"><a href="mailto:{$contact_email}">{$contact_email}</a></span>  <br/>
-                    <span class="contact_row"><a href="mailto:jcabs2007@gmail.com">jcabs2007@gmail.com</a></span>
-                </p>
-                <p class="contacts">
-                    <strong>Contacts:</strong> <br/>
-                    {for $contact = 0 to count($contact_contacts) - 1}
-                        <span class="contact_row">{$contact_contacts[$contact]}</span> <br/>
-                    {/for}
-                </p>
-            </li>                      
-        </ul>
-        <!--end contact widget-->
-      </div><!--End of page02ColumnWrap-->
-      <div class="page02ColumnTwo">
-        <div class="aboutUs">
-            <div class="aboutUsTile"><h2>Sage Products</h2></div>
-
-            {foreach from=$products item=product}
-                <div class="product_box">
-                    <h4>{$product['name']}</h4>
-                    <div class="product_details">
-                        <table>
-                            <tr >
-                                <td rowspan="2"><img src="{$image}/{$product['image']}"></td>
-                                <td class="label">{$product['brief_description']}</td>
-                            </tr>
-                            <tr>
-                                <td class="label price">Price: USD {$product['price']}</td>
-                            </tr>
-                            <tr>
-                                <td colspane="2"><a href="{$base_url}Home/sageProduct?id={$product['id']}" class="readMore">Read More</a></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>            
-            {/foreach}
-        </div><!--End of aboutUs-->                
-        <div class="clearfix" style="clear:both;"></div><!--End of clearfix-->
-        <div class="contactUsMapWrapper">
-                <div class="contactUsMapTitle" style="border-bottom:0px; border-top: 1px dotted #ccc;margin-top: 20px;">
-                    Contact JCA Bookkeeping Services
-                </div><!--End of contactUsMapTitle-->
-                {$load_errors}
-                <div class="contactUsDataText">
-                   <form method="POST">
-                        <p class="no">Firstname:</p>
-                        <p class="no"><input class="inputbox" type="text" name="firstname"></p>
-                        <p class="no">Lastname:</p>
-                        <p class="no"><input class="inputbox" type="text" name="lastname"></p>
-                        <p class="no">Address:</p>
-                        <p class="no"><input class="inputbox" type="text" name="address"></p>
-                        <p class="no">Email:</p>
-                        <p class="no"><input class="inputbox" type="text" name="email"></p>
-                        <p class="no">Phone:</p>
-                        <p class="no"><input class="inputbox" type="text" name="phone"></p>
-                        <p class="no">Company:</p>
-                        <p class="no"><input class="inputbox" type="text" name="company"></p>
-                        <p class="no">Message:</p>
-                        <p class="no"><textarea class="textArea" name="message"></textarea></p>   
-                        <input type="hidden" name="subject" value="JCA User Inquiry"/>                                                                
-                        <p class="no"><input class="subButton" type="submit" name="Contact" value="Contact Us"></p> 
-                    </form>
-                </div><!--End of contactUsDataText-->
-            </div><!--End of contactUsMapWrapper-->    
-      </div><!--End of page02ColumnTwo-->
-        <div class="clearfix" style="clear:both;"></div><!--End of clearfix-->    
-    </div><!--End of page02Body-->
-
-
-    <div class="ourPartners">
-        <div class="title"><h3>Our Partners</h3></div>
-        <div class="partnersBox1">
-            <p><a href="http://www.dti.gov.ph" target="blank">Department of Trade & Industry</a></p>
-            <p><a href="http://www.bir.gov.ph" target="blank"> Bureau of Internal Revenue</a></p>
-        </div>
-        <div class="partnersBox1">
-            <p><a href="#">Register of Deeds and Maritime Industry</a></p>
-            <p><a href="http://www.immigration.gov.ph" target="blank">Bureau of Immigration Commission</a></p>                   
-        </div>
-        <div class="partnersBox1">
-            <p><a href="http://www.sec.gov.ph" target="blank">Securities and Exchange Commission</a></p>        
-        </div> 
-        <div class="clearfix" style="clear:both"></div>                       
-    </div><!--End of ourPartners-->
-</div><!--End of bodyWrap-->
-<div class="footer">
-
-</div><!--End of footer-->
-<div class="copyrights">
-    <p>All Rights Reserved JCA Bookkeeping Services 2013</p>
-</div><!--End of copyrights-->
-</body>
+<!DOCTYPE html>
+<!-- HTML5 Mobile Boilerplate -->
+<!--[if IEMobile 7]><html class="no-js iem7"><![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+	<head>
+		{include file="_shared/_head.php" }
+	<body>
+		<div id="wrapper">
+			<div id="headcontainer">
+				{include file="_shared/_header.php" }				
+			</div>
+			
+			<!-- Main Contianer -->
+			<div id="maincontentcontainer">
+				<div class="section group panel">
+					<div class="col span_1_of_4 float_left">
+						<div class="col span_2_of_2">{include file="_widget/_services.php" }</div>
+						<div class="col span_2_of_2 panel">{include file="_widget/_contacts.php" }</div>
+					</div>
+					<div class="col span_3_of_4 float_right">
+						<div class="section group">
+							<div class="col span_2_of_2">
+								<h4 class="title">Sage Products</h4>
+							</div>
+							<div class="section group left" id="content_description">
+								<div class="col span_2_of_2" id="product_list">
+									 {foreach from=$products item=product}
+									 	<div class="section group panel" >
+									 		<h5>{$product['name']}</h5>
+									 		<div class="col span_1_of_6">
+									 			<img src="{$image}/{$product['image']}">
+									 		</div>
+									 		<div class="col span_5_of_6">
+									 			<div class="col span_2_of_2 label">{$product['brief_description']}</div>
+									 			<div class="col span_2_of_2 price">Price: USD {$product['price']}</div>
+									 		</div>
+									 		<div class=" section panel col span_1_of_6">
+									 			<a href="{$base_url}Services/sageProduct?id={$product['id']}">Read More</a>
+									 		</div>
+									 	</div>
+									 {/foreach}
+								</div>
+							</div>
+						</div> 
+					</div>
+				</div>				
+			</div>
+			<!-- End main container -->
+			<div id="footercontainer">
+				{include file="_shared/_footer.php"}
+			</div>
+		</div>
+	</body>
+	{include file="_shared/_foot.php"}
 </html>

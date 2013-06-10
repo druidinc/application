@@ -367,6 +367,7 @@ nav.nav_container {
 
 .center { text-align: center; }
 .left { text-align: left; }
+.justify {text-align: justify;}
 .right { text-align: right;}
 
 .float_left { float: left !important; }
@@ -464,4 +465,100 @@ nav.nav_container {
 	font-size: 12px;
 	color: #666;
 	text-decoration: underline;	
+}
+
+#content_description{
+	list-style-position: inside;
+	line-height: 25px !important;
+}
+
+#content_description p {
+	line-height: 25px !important;
+}
+
+#content_description ol, #content_description ul, #content_description li {
+	position: relative;
+}
+
+#content_description li:first-child{
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+#content_description li{
+	margin-left: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px; 
+	line-height: 25px !important;
+}
+
+#content_description li:first-child{
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+
+#content_description a {
+	color: #41BB19;	
+}
+
+#content_description a:hover{
+	text-decoration: underline;
+};
+
+#product_list .label{
+	font-size: 18px;
+}
+
+#product_list .price {
+	font-size: 23px;
+	position: relative;
+	top: 50px;
+}
+
+#product_list img{
+	width: 75px !important;
+	height: 97px !important;
+}
+
+#product_list a {
+	background: #41BB19;
+	color: white;
+	padding: 5px;
+}
+
+#product img{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 125px;
+	height: 177px;
+}
+
+#product a {
+	background: #41BB19;
+	color: white;
+	padding: 10px;
+	font-size: 22px;
+}
+
+#product a.send{
+	background: #41BB19 !important;
+	color: white !important;
+	font-size: 30px !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+}
+
+#product a.continue, #product a.remove{
+	font-size: 20px !important;
+	text-decoration: underline !important;
+	color: black !important	;
+	background: transparent  !important;
+	padding: 0 !important;
+}
+
+#product div.remove{
+	position: relative;
+	top: 60px;	
 }

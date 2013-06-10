@@ -53,6 +53,7 @@
 		<link rel="stylesheet" href="{$css}/home.css" media="all">
 	{elseif $page == "services"}
 		<link rel="stylesheet" href="{$css}/services.css" media="all">
+		<link rel="stylesheet" href="{$css}/modal/sage_inquiry.css" media="all">
 	{/if}
 
 	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements and feature detects -->

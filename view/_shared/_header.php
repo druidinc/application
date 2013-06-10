@@ -29,7 +29,7 @@
 </header>
 <nav class="nav_container">
 	<div class="section group headcontent">
-		<div class="col span_1_of_1 {if $page == 'home'}selected_nav{/if}"><a  href="#" >Home</a></div>
+		<div class="col span_1_of_1 {if $page == 'home'}selected_nav{/if}"><a  href="{$base_url}" >Home</a></div>
 		<div class="col span_1_of_1 {if $page == 'services'}selected_nav{/if}"><a  href="{$base_url}Services" >Services</a></div>
 		<div class="col span_1_of_1"><a  href="#" >Products</a></div>
 		<div class="col span_1_of_1"><a  href="#" >About Us</a></div>

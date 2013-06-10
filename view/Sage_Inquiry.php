@@ -1,212 +1,58 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>JCABookkeeping Services</title>
-<link rel="shortcut icon" href="{$base_url}favicon.ico" type="image/x-icon"/>
-<link rel="icon" href="{$base_url}favicon.ico" type="image/x-icon">
-<link href="{$css}/default.css" type="text/css" rel="stylesheet" />
-<link href="{$css}/style.css" type="text/css" rel="stylesheet" />
-<link href="{$css}/sage_products.css" type="text/css" rel="stylesheet" />
-<link href="{$css}/contact_widget.css" type="text/css" rel="stylesheet" />
-<link href="{$css}/contactUs.css" type="text/css" rel="stylesheet" />
+<!DOCTYPE html>
+<!-- HTML5 Mobile Boilerplate -->
+<!--[if IEMobile 7]><html class="no-js iem7"><![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+	<head>
+		{include file="_shared/_head.php" }
+	<body>
+		<div id="wrapper">
+			<div id="headcontainer">
+				{include file="_shared/_header.php" }				
+			</div>
+			
+			<!-- Main Contianer -->
+			<div id="maincontentcontainer">
+				<div class="section group panel">
+					<div class="col span_1_of_4 float_left">
+						<div class="col span_2_of_2">{include file="_widget/_services.php" }</div>
+						<div class="col span_2_of_2 panel">{include file="_widget/_contacts.php" }</div>
+					</div>
+					<div class="col span_3_of_4 float_right">
+						<div class="section group justify" id = "product">
+							<div class="col span_2_of_2"><h4 class="title">Sage Products Inquiries</h4></div>
+							<div class="section group panel"></div>
+							<div class="section group panel">
+								<div class="col span_2_of_2">
+									<a href="#info" class="send" name="send" onclick="openInquiry()">Send Inquiry</a>&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;
+									<a href="{$base_url}Services/sageProducts" class="continue">continue browsing</a>
+								</div>								
+							</div>
+							<div class="col span_2_of_2" id="product_list">
+								{foreach from=$products item=product}
+								 	<div class="section group panel left" >
+								 		<h5>{$product['name']}</h5>
+								 		<div class="col span_1_of_6">
+								 			<img src="{$image}/{$product['image']}">
+								 		</div>
+								 		<div class="col span_5_of_6">
+								 			<div class="col span_2_of_2 price">Price: USD {$product['price']}</div>
+								 			<div class="col span_2_of_2 left remove"><a href="#send" class="remove" name="remove" onclick="window.location='{$base_url}Home/removeSageInquiry?id={$product['id']}'">remove</a></div>
+								 		</div>
+								 	</div>
+								 {/foreach}
+								 </div>
+						</div> 
+					</div>
+				</div>				
+			</div>
+			<!-- End main container -->
+			<div id="footercontainer">
+				{include file="_shared/_footer.php"}
+			</div>
+		</div>
 
-<script type="text/javascript" src="{$javascript}/jquery.min.js"></script>
-<script type="text/javascript" src="{$javascript}/sage_inquiry.js"></script>
-<script type="text/javascript" src="{$javascript}/slide.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            slider('{$base_url}','{$image}');
-            var box_h;
-            var box_w;
-
-
-            box_h = $('.customer_information').height();
-            box_w = $('.customer_information').width();
-
-            centerTheBox($('.customer_information'),box_h,box_w);
-        });
-    </script>
-</head>
-
-<body>
-<div class="topWrap">
-	<div class="topColumn">
-    	<div class="logo">
-        	<img src="{$image}/jca_final_logo.png" />
-        </div><!--End of logo-->
-        <!--<div class="searchBar">
-            <p>Searching....</p>
-        </div>--><!--End of searhBar-->
-    </div><!--End of topColumn-->
-</div><!--End of topWrap-->
-<!-- ------------------------------------------------------------------------------- -->
-<div class="menuWrap">
-    <div class="homeMenu">        
-        <div class="menuSide">
-            <ul class="ul">
-                <li><a href="{$base_url}">Home</a></li>                
-                <li><a href="{$base_url}Home/services">Services</a></li>
-                <li class="menu_selected"><a href="{$base_url}Home/sageProducts">Products</a></li>
-                <li><a href="{$base_url}Home/about_us">About Us</a></li>
-                <li><a href="{$base_url}Home/clients">Clients</a></li>
-                <li><a href="{$base_url}Home/ContactUs">Contact Us</a></li>            
-            </ul>
-        </div><!--closing for menuSide-->
-    </div><!--closing for homeMenu-->
-</div><!--End of menuWrap-->
-<!-- ------------------------------------------------------------------------------- -->
-<div class="animationWrap">
-	<div class="animation">
-		<div class="pic_container"></div>
-        <div class="banner_loader"><img src="{$image}/loader-green.gif"></div>
-    </div><!--End of animation-->
-</div><!--End of animationWrap-->
-<!-- ------------------------------------------------------------------------------- -->
-<div class="bodyWrap">
-	
-    <div class="page02Body">
-      <div class="page02ColumnOne">
-        <ul class="verticalMenu">
-            {foreach from=$services item=categories}
-                <li class="verticalMenuTitle" id="{'cat_'|cat:$categories.cat_id}">{$categories.cat_name}</li>
-
-                {foreach from=$categories.subcat item=subcategories}
-                    <li class="{if $subcategories.subcat_name == 'Peachtree (Sage 50)'}category_selected{else}none{/if}">
-                        <a href="{$base_url}Home/service?cat_id={$categories.cat_id}&subcat_id={$subcategories.subcat_id}" id="subcat_{$subcategories.subcat_id}_{$categories.cat_id}">
-                            {$subcategories.subcat_name}
-                        </a>
-                    </li>
-                {/foreach}
-            {/foreach}                            
-        </ul>
-        <!--contact widget-->
-        <ul class="verticalMenu contact_widget">
-            <li class="verticalMenuTitle">Contact Us</li>
-            <li>
-                <div class="company_name">{$contact_company_name}</div>
-                <p class="address">{$contact_address}</p>
-                <p class="mail contacts">
-                    <strong>Mail:</strong>  <br/>
-                    <span class="contact_row"><a href="mailto:{$contact_email}">{$contact_email}</a></span>  <br/>
-                    <span class="contact_row"><a href="mailto:jcabs2007@gmail.com">jcabs2007@gmail.com</a></span>
-                </p>
-                <p class="contacts">
-                    <strong>Contacts:</strong> <br/>
-                    {for $contact = 0 to count($contact_contacts) - 1}
-                        <span class="contact_row">{$contact_contacts[$contact]}</span> <br/>
-                    {/for}
-                </p>
-            </li>                      
-        </ul>
-        <!--end contact widget-->
-      </div><!--End of page02ColumnWrap-->
-      <div class="page02ColumnTwo">
-        <div class="aboutUs">
-            <div class="aboutUsTile"><h2>Sage Products Inquiries</h2></div>
-            <div class="send_inquiry">
-                <a href="#info" class="send" name="send" onclick="openInquiry()">Send Inquiry</a>&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;
-                <a href="{$base_url}Home/sageProducts" class="continue">continue browsing</a>
-            </div>
-            {foreach from=$products item=product}
-                <div class="product_box">
-                    <h5>{$product['name']}</h5>
-                    <div class="product_details">
-                        <table>
-                            <tr >
-                                <td rowspan="2"><img src="{$image}/{$product['image']}"></td>
-                                <td class="label">Price: Php {$product['price']}</td>
-                            </tr>
-                            <tr>
-                                <td class="label price" style="vertical-align:top !important;">
-                                    <a href="#send" name="remove" onclick="window.location='{$base_url}Home/removeSageInquiry?id={$product['id']}'">remove</a>
-                                </td>
-                            </tr>
-                        </table>                        
-                    </div>
-                </div>            
-            {/foreach}
-        </div><!--End of aboutUs-->        
-        <div class="clearfix" style="clear:both;"></div><!--End of clearfix-->      
-      </div><!--End of page02ColumnTwo-->
-        <div class="clearfix" style="clear:both;"></div><!--End of clearfix-->    
-    </div><!--End of page02Body-->
-
-
-    <div class="ourPartners">
-        <div class="title"><h3>Our Partners</h3></div>
-        <div class="partnersBox1">
-            <p><a href="http://www.dti.gov.ph" target="blank">Department of Trade & Industry</a></p>
-            <p><a href="http://www.bir.gov.ph" target="blank"> Bureau of Internal Revenue</a></p>
-        </div>
-        <div class="partnersBox1">
-            <p><a href="#">Register of Deeds and Maritime Industry</a></p>
-            <p><a href="http://www.immigration.gov.ph" target="blank">Bureau of Immigration Commission</a></p>                   
-        </div>
-        <div class="partnersBox1">
-            <p><a href="http://www.sec.gov.ph" target="blank">Securities and Exchange Commission</a></p>        
-        </div> 
-        <div class="clearfix" style="clear:both"></div>                       
-    </div><!--End of ourPartners-->
-</div><!--End of bodyWrap-->
-<div class="footer">
-
-</div><!--End of footer-->
-<div class="copyrights">
-    <p>All Rights Reserved JCA Bookkeeping Services 2013</p>
-</div><!--End of copyrights-->
-
-<div class="fade-box">   
-</div>
- <div class="customer_information" name="info">
-    <div style="width: auto;height: 25px;">
-        <a href="#send" class="close" onclick="closeInquiry()">X</a>
-    </div>
-    <form method="POST">
-        {$load_errors}
-        <table >
-            <tr>
-                <td>First Name <font color="red">*</font></td>
-                <td class="input"><input type="text" name="firstname" value="{$firstname}"></td>
-                <input type="hidden" name="subject" value="Sage Products Inquiry">
-            </tr>
-            <tr>
-                <td>Last Name <font color="red">*</font></td>
-                <td class="input"><input type="text" name="lastname" value="{$lastname}"></td>
-            </tr>
-            <tr>
-                <td>Address <font color="red">*</font></td>
-                <td class="input"><input type="text" name="address" value="{$address}"></td>
-            </tr>
-            <tr>
-                <td>Email <font color="red">*</font></td>
-                <td class="input"><input type="text" name="email" value="{$email}"></td>
-            </tr>
-            <tr>
-                <td>Phone <font color="red">*</font></td>
-                <td class="input"><input type="text" name="phone" value="{$phone}"></td>
-            </tr>
-            <tr>
-                <td>Company</td>
-                <td class="input"><input type="text" name="company" value="{$company}"></td>
-            </tr>
-            <tr>
-                <td valign="top">Message / Comment <font color="red">*</font></td>
-                <td class="input"><textarea name="message">{$message}</textarea></td>
-            </tr>
-            <tr>
-                <td colspan="2" style="text-align:right">
-                    <input type="submit" name="submit" value="Submit">
-                    <input type="reset" name="reset" value="Reset">
-                </td>
-            </tr>
-        </table>
-    </form>
- </div>
- {if $load_errors != ''}
-    <script type="text/javascript">        
-        openInquiry();
-    </script>
-{/if}
-</body>
+		{include file="_modal/_sage_inquiry.php"}
+	</body>
+	{include file="_shared/_foot.php"}
 </html>

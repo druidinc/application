@@ -22,6 +22,11 @@ function centerTheBox(box,h,w){
 function openInquiry(){	
 	$('.fade-box').show();
 	$('.customer_information').show();
+
+	var h = $('.customer_information').height();
+	var w = $('.customer_information').width();
+
+	centerTheBox($('.customer_information'),h,w);
 }
 
 function closeInquiry(){
