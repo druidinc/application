@@ -478,6 +478,7 @@ nav.nav_container {
 
 #content_description ol, #content_description ul, #content_description li {
 	position: relative;
+	
 }
 
 #content_description li:first-child{
