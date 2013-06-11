@@ -32,7 +32,7 @@
 		<div class="col span_1_of_1 {if $page == 'home'}selected_nav{/if}"><a  href="{$base_url}" >Home</a></div>
 		<div class="col span_1_of_1 {if $page == 'services'}selected_nav{/if}"><a  href="{$base_url}Services" >Services</a></div>
 		<div class="col span_1_of_1 {if $page == 'products'}selected_nav{/if}"><a  href="{$base_url}Products" >Products</a></div>
-		<div class="col span_1_of_1"><a  href="#" >About Us</a></div>
+		<div class="col span_1_of_1 {if $page == 'about_us'}selected_nav{/if}"><a  href="{$base_url}About_Us" >About Us</a></div>
 		<div class="col span_1_of_1"><a  href="#" >Clients</a></div>
 		<div class="col span_1_of_1"><a  href="#" >Contacts</a></div>
 	</div>	
