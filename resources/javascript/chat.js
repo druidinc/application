@@ -19,10 +19,7 @@ $('html').click(function(e){
 			{
 				left: '-=263'
 			},
-			300,
-			function(){
-				clearInterval(t);
-			}
+			300
 		);
 		chatClicked = 0;
 	}
