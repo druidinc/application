@@ -84,6 +84,10 @@
 			$this->load->controller('Products/sageProducts');
 		}
 
+		public function sageImplementations(){
+			$this->load->controller('Implementations');
+		}
+
 		public function downloadBusinessRegistrationForm(){
 			header('Content-type: application/pdf');
 
