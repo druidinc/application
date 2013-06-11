@@ -29,7 +29,7 @@
 								</div>
 								<div class="col span_2_of_2"><h4>Price: USD {$product['price']}</h4></div>
 								<div class=" section panel col span_1_of_6">
-						 			<a href="{$base_url}Services/sageInquiry?id={$product['id']}">Inquire</a>
+						 			<a href="{$base_url}Products/sageInquiry?id={$product['id']}">Inquire</a>
 						 		</div>
 							{/foreach}
 						</div> 

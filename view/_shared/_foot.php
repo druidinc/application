@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="{$javascript}/home.js"></script>
 {elseif $page == 'services'}
 	<script type="text/javascript" src="{$javascript}/services2.js"></script>
+{elseif $page == 'products'}
 	<script type="text/javascript" src="{$javascript}/sage_inquiry.js"></script>
 {/if}
 

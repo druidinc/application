@@ -25,7 +25,7 @@
 							<div class="section group panel">
 								<div class="col span_2_of_2">
 									<a href="#info" class="send" name="send" onclick="openInquiry()">Send Inquiry</a>&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;
-									<a href="{$base_url}Services/sageProducts" class="continue">continue browsing</a>
+									<a href="{$base_url}Products/sageProducts" class="continue">continue browsing</a>
 								</div>								
 							</div>
 							<div class="col span_2_of_2" id="product_list">
@@ -37,7 +37,7 @@
 								 		</div>
 								 		<div class="col span_5_of_6">
 								 			<div class="col span_2_of_2 price">Price: USD {$product['price']}</div>
-								 			<div class="col span_2_of_2 left remove"><a href="#send" class="remove" name="remove" onclick="window.location='{$base_url}Home/removeSageInquiry?id={$product['id']}'">remove</a></div>
+								 			<div class="col span_2_of_2 left remove"><a href="#send" class="remove" name="remove" onclick="window.location='{$base_url}Products/removeSageInquiry?id={$product['id']}'">remove</a></div>
 								 		</div>
 								 	</div>
 								 {/foreach}

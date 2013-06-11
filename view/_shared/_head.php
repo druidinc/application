@@ -52,7 +52,8 @@
 	{if $page == 'home'}
 		<link rel="stylesheet" href="{$css}/home.css" media="all">
 	{elseif $page == "services"}
-		<link rel="stylesheet" href="{$css}/services.css" media="all">
+		<link rel="stylesheet" href="{$css}/services.css" media="all">		
+	{elseif $page == "products"}
 		<link rel="stylesheet" href="{$css}/modal/sage_inquiry.css" media="all">
 	{/if}
 

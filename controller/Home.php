@@ -246,31 +246,7 @@
 			$this->load->view('Sage_Inquiry',$view_data);
 		}
 
-		public function removeSageInquiry(){
-			$id = '';
-			$prod = array();
-			$inquire_id = array();
-
-			if(count($this->uri->get) && array_key_exists('id', $this->uri->get) && strlen(trim($this->uri->get['id'])))
-				$id = $this->uri->get['id'];
-
-			$sessData = $this->session->sessionData;
-
-			if(array_key_exists('inquire_id', $sessData)) {
-				$inquire_id = $sessData['inquire_id'];
-
-				//echo array_search($id, $inquire_id );
-				if(count($inquire_id) == 1)
-					$inquire_id = array();
-				else
-					$inquire_id = array_splice($inquire_id, array_search($id, $inquire_id ),1);
-				//print_r($inquire_id);
-			} 
-
-			$this->session->sessionData = array('inquire_id'=>$inquire_id);
-
-			$this->load->controller('Services/sageInquiry');
-		}
+		
 
 		public function sageImplementations(){
 			$view_data = array(
