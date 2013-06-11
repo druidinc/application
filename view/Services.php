@@ -46,6 +46,7 @@
 			<!-- End main container -->
 			<div id="footercontainer">
 				{include file="_shared/_footer.php"}
+				{include file="_widget/_chat.php"}
 			</div>
 		</div>
 	</body>
