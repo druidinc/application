@@ -54,6 +54,7 @@
 										<div class="section group panel">
 											<div class="col span_1_of_3"><font color="red">*</font>Message: </div>
 											<div class="col span_2_of_3"><textarea class="span_2_of_2" rows="10" name="message"></textarea></div>
+											<input type="hidden" name="subject" value="JCA User Inquiry"/>  
 										</div>
 										<div class="section group panel">
 											<div class="col span_1_of_3">&nbsp;</div>
