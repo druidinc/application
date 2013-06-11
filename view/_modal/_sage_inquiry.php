@@ -38,6 +38,7 @@
     	<div class="section group panel">
         	<div class="col span_1_of_2">Message / Comment <font color="red">*</font></div>
         	<div class="col span_1_of_2"><textarea name="message">{$message}</textarea></div>
+            <input type="hidden" name="subject" value="JCA Sage Products Inquiry"/>  
     	</div>
     	<div class="section group panel">
         	<div class="col span_2_of_2 center">
