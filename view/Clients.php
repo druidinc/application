@@ -44,8 +44,19 @@
 									<div class="panel col span_1_of_2">
 										<div class="col span_2_of_2" style="text-indent:20px;font-weight:bold">{$client.company_name}</div>
 										<div class="col span_2_of_2" style="text-indent:40px;">{$client.address}</div>
-										<div class="col span_2_of_2" style="text-indent:40px;text-decoration:underline">{$client.contact_person} - {$client.position}</div>
-										<div class="col span_2_of_2" style="text-indent:40px;">{$client.contact_number}</div>
+										{if isset($client.contact_person) || $client.contact_person == ''}
+											<div class="col span_2_of_2" style="text-indent:40px;text-decoration:underline">
+												{$client.contact_person} 
+												{if isset($client.position) || $client.position == ''}
+													- {$client.position}
+												{/if}												
+											</div>
+										{/if}
+
+										{if isset($client.contact_number) || $client.contact_number == ''}
+											<div class="col span_2_of_2" style="text-indent:40px;">{$client.contact_number}</div>
+										{/if}
+										
 									</div>
 								{/foreach}
 								<!-- {foreach from=$implementations item=implementation}
