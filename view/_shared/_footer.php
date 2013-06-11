@@ -37,4 +37,4 @@
 	<div class = "col span_1_of_2 left">JCA Bookkeeping Services</div>
 	<div class = "col span_1_of_2 right float_right">Powered by <a href="http://www.druidinc.com">DRUID Innovations, Inc.</a></div>
 </div>
-{include file="../_widget/_chat.php"}
+{include file="_widget\_chat.php"}
