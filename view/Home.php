@@ -86,7 +86,7 @@
 
 			</div>
 			<div id="footercontainer">
-				{include file="_shared/_footer.php"}
+				{include file="_shared/_footer.php"}				
 			</div>
 		</div>
 	</body>

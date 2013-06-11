@@ -1,0 +1,95 @@
+.chat_panel {
+	width: 300px;
+	position: fixed;
+	top: 200px;
+	left: -268px;
+	/*left: 0;*/
+	padding: 5px;
+	z-index: 1000;
+	display: none;
+}
+
+.chat_inner_panel {
+	position: relative;
+	width: auto;
+	height: auto;
+}
+
+.chat_online_panel {
+	float: left;
+	position: relative;
+	width: 260px;
+	height: auto;
+	border: 1px solid #ccc;
+	background: #3D3D3D;
+	color: #FFF;
+}
+.chat_button_panel {
+	float: right;
+	position: relative;
+	width: 37px;
+	height: 60px;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+	background: #3D3D3D;
+	color: #FFF;
+	left: -1px;
+}
+
+.chat_button_drawer {
+	writing-mode: lr-tb;
+	-webkit-transform: rotate(90deg);
+	moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+	position: absolute;
+	font-size: 20px;
+	top: 15px;
+	left: -2px;
+}
+
+.chat_header {
+	background: #3D3D3D;
+	color: #FFF;
+	text-align: center;
+	padding-top: 17px;
+	padding-bottom: 18px;
+	border-bottom: 1px solid;
+	font-size: 22px;
+}
+
+.chat_online_list {
+	padding: 10px;
+	text-align: left;
+	font-size: 18px;
+}
+
+
+.chat_online_list ul {
+	margin-left: 10px;
+	list-style: none;
+}
+
+.chat_online_list ul li{
+	padding-left: 10px;
+	text-indent: -10px;
+	cursor: pointer;
+}
+.chat_online_list ul li:before {
+      /* For a round bullet */
+      content:'\2022';
+      /* For a square bullet */
+      /*content:'\25A0';*/
+      display: block;
+      position: relative;
+      max-width: 0px;
+      max-height: 0px;
+      left: -10px;
+      top: -0px;
+      color: #00D8FF;
+      font-size: 30px;
+      padding-right: 10px;
+}

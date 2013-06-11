@@ -8,7 +8,10 @@
 					
 			$view_data['online_reps'] = $this->reps->getOnlineReps();
 			$view_data['support_clicked'] = $this->form->post['supportClicked'];
-			echo $this->load->view('Online',$view_data,true);
+			if(!empty($view_data['online_reps']))
+				echo $this->load->view('Online',$view_data,true);
+			else 
+				echo "empty";
 		}
 
 		public function inquire() {

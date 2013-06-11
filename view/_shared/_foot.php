@@ -2,6 +2,7 @@
 <script src="{$javascript}/default/modernizr-2.5.3-min.js"></script>
 <script src="{$javascript}/default/respond.min.js"></script>
 <script type="text/javascript" src="{$javascript}/slide.js"></script>
+<script type="text/javascript" src="{$javascript}/chat.js"></script>
 
 {if $page == 'home'}
 	<script type="text/javascript" src="{$javascript}/home.js"></script>
@@ -14,5 +15,6 @@
 <script type="text/javascript">
     $(document).ready(function(){
         slider('{$base_url}','{$image}');
+        getOnline('{$base_url}');
     });
 </script>

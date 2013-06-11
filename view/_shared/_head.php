@@ -47,6 +47,7 @@
 	<!-- widgets -->
 	<link rel="stylesheet" href="{$css}/widget/_services.css" media="all">
 	<link rel="stylesheet" href="{$css}/widget/_contacts.css" media="all">
+	<link rel="stylesheet" href="{$css}/widget/_chat.css" media="all">
 
 
 	{if $page == 'home'}

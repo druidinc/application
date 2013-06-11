@@ -90,6 +90,7 @@
 						ON 	user_online_status.id = user_online.user_online_status_id
 				WHERE 		user_login.user_login_status_id = 1
 				AND 		user_login.active = 1 
+				AND		user_online.user_online_status_id = 1
 			';
 
 			return $this->db->query($query);
