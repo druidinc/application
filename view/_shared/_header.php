@@ -34,7 +34,7 @@
 		<div class="col span_1_of_1 {if $page == 'products'}selected_nav{/if}"><a  href="{$base_url}Products" >Products</a></div>
 		<div class="col span_1_of_1 {if $page == 'about_us'}selected_nav{/if}"><a  href="{$base_url}About_Us" >About Us</a></div>
 		<div class="col span_1_of_1 {if $page == 'clients'}selected_nav{/if}"><a  href="{$base_url}Clients" >Clients</a></div>
-		<div class="col span_1_of_1"><a  href="#" >Contacts</a></div>
+		<div class="col span_1_of_1 {if $page == 'contact_us'}selected_nav{/if}"><a  href="{$base_url}Contact_Us" >Contacts</a></div>
 	</div>	
 </nav>
 <div class="banner_container">
