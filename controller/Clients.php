@@ -2,18 +2,21 @@
 	if(!defined('SERVER_ROOT'))
 		die ('Unauthorized access. File forbidden.');
 
-	class About_Us extends Controller{
+	class Clients extends Controller{
 
 		private $services;
 		private $pages;
+		private $products;
 
 		public function main(){
 			$this->services = $this->load->model('Admin/Services_Model');
 			$this->pages = $this->load->model('Admin/Pages_Model');
+			$this->products = $this->load->model('Admin/Sage_Model');
+			$clients = $this->load->model('Admin/Clients_Model');
 
 			
 			$view_data = array(
-				"page" => "about_us",
+				"page" => "clients",
 				"title" => "JCA Bookkeeping Services"
 			);
 
@@ -41,8 +44,10 @@
 			}
 
 			$view_data['services'] = $this->services->getServices();
+			$view_data['implementations'] = $this->products->getClients();
+			$view_data['clients'] = $clients->getClients();
 
-			$this->load->view('About_Us',$view_data);
+			$this->load->view('Clients',$view_data);
 		}
 	}
 ?>
