@@ -10,18 +10,18 @@
 			<div class="col span_1_of_2 float_right">
 				<div class="searchBar float_right">
 		            <script>
-		              (function() {
-		                var cx = '017924416408079978860:mhdcfjgmngo';
-		                var gcse = document.createElement('script');
-		                gcse.type = 'text/javascript';
-		                gcse.async = true;
-		                gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-		                    '//www.google.com/cse/cse.js?cx=' + cx;
-		                var s = document.getElementsByTagName('script')[0];
-		                s.parentNode.insertBefore(gcse, s);
-		              })();
-		            </script>
-		            <gcse:search></gcse:search>
+					  	(function() {
+						    var cx = '017924416408079978860:e--8vytmtqq';
+						    var gcse = document.createElement('script');
+						    gcse.type = 'text/javascript';
+						    gcse.async = true;
+						    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+						        '//www.google.com/cse/cse.js?cx=' + cx;
+						    var s = document.getElementsByTagName('script')[0];
+						    s.parentNode.insertBefore(gcse, s);
+					  	})();
+					</script>
+					<gcse:search></gcse:search>
 		        </div>
 			</div>
 		</div>

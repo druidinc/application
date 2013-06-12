@@ -1,6 +1,8 @@
 <?php
 	if(!defined('SERVER_ROOT'))
 		die ('Unauthorized access. File forbidden.');
+	
+	header('Access-Control-Allow-Origin: *');
 
 	class Chat extends Controller {
 		public function getOnline(){
