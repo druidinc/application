@@ -183,5 +183,43 @@
 
 			$this->tools->email->send();
 		}
+
+		public function visaWorkPermit(){
+
+			$name = "";
+
+			$this->_services = $this->load->model('Admin/Services_Model');
+			$this->_pages = $this->load->model('Admin/Pages_Model');
+			$this->_visaWorkingPermit = $this->load->model('Admin/Visa_Working_Permit_Model');
+
+
+			if(count($this->uri->get) && array_key_exists('name', $this->uri->get) && strlen(trim($this->uri->get['name'])))
+				$name = $this->uri->get['name'];
+
+			$view_data = array(
+				"page" => "services",
+				"title" => "JCA Bookkeeping Services"
+			);
+
+			$view_data['services'] = $this->_services->getServices();
+			$view_data['service'] = array(array("subcat_name" => 'Visas & Work Permit'));
+			$pageData = $this->_pages->getPage('d',3);
+
+			foreach ($pageData as $data) {
+				$contents = json_decode($data['content']);
+
+				foreach ($contents->content as $content) {
+					$view_data['contact_company_name'] = $content->company_name;
+					$view_data['contact_address'] = $content->address;
+					$view_data['contact_email'] = $content->email;
+					$view_data['contact_contacts'] = $content->contacts;
+				}
+			}
+
+			$view_data['visa_working_permit'] = $this->_visaWorkingPermit->getVisaWorkingPermitByName($name);
+
+			$this->load->view("Visa_Working_Permit", $view_data);
+
+		}
 	}
 ?>
