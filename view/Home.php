@@ -18,15 +18,22 @@
 					<div class="col span_3_of_5">
 						<div class="section group">
 							<div class="col span_2_of_2 left">
-								<h4 >Mission</h4>
+								<h4 >Our Mission</h4>
 								{$mission}
 							</div>
 						</div>
 
 						<div class="section group">
 							<div class="col span_2_of_2 left">
-								<h4 >Vision</h4>
+								<h4 >Our Vision</h4>
 								{$vision}
+							</div>
+						</div>
+
+						<div class="section group">
+							<div class="col span_2_of_2 left">
+								<h4 >Our Principle</h4>
+								Our simple philosophy that combining commitment and passion to our services are the vital foundation to give high quality standard results.  We strive to implement solutions that will enable our clients to succeed and maintain their competitive edge in their core line of business.
 							</div>
 						</div>
 					</div>
