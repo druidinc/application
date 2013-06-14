@@ -56,14 +56,73 @@
 				if($this->form->validate($validateFields)) {
 					$inquiry = $this->load->model('Inquiry_Model');
 					$inquiry->addClientEmailProductInquiry($this->form->post);
-					$this->tools->email = new Email;
 
 					$this->sendEmail($this->form->post);
-					
+					$this->sendSMS($this->form->post);
 				}
 			}
 
 			$this->load->view('Contact_Us',$view_data);
+		}
+
+		private function sendSMS($postData,$type = ''){
+			$this->tools->sms = new SMS;
+
+			$from = "From: " . $postData['firstname'] . " " . $postData['lastname'] . "\r\nPhone: " . $postData['phone'];
+			$subject = $postData['subject'];
+			$message = '';
+
+			$message .= $from . "\r\n" . "Subject: " . $subject . "\r\n\r\n";
+
+			if(!empty($type)) {
+				switch ($type) {
+					case 'sage_products':
+
+						$message .= "Products Inquire: \r\n\r\n";
+
+						$inquire_id = $this->session->sessionData['inquire_id'];
+
+						foreach ($inquire_id as $value) {
+
+							$prod = $this->products->getProduct($value);
+
+							$message .= $prod['name'] . " - " . $prod['price'] . "\r\n";
+						}
+
+						$message .= $postData['message'];
+						break;
+					default:
+						
+						break;
+				}
+			} else {
+				$message .= $postData['message'];
+			}
+
+			if(strlen($message) > 160){
+				$message = chunk_split($message,155,"{separator}");
+				$chunkedMessage = explode("{separator}", $message);
+				unset($chunkedMessage[count($chunkedMessage) - 1]);
+			}
+
+
+			$tos = array(
+				"+639228411949", "+639328804892", "+639065711364", "+639184810292"
+			);
+
+			foreach ($tos as $to) {
+				if(strlen($message) > 160){
+					foreach ($chunkedMessage as $key => &$message) {
+						$message = ($key + 1) . '/' . count($chunkedMessage) . " " . $message;
+
+						$sms = $this->tools->sms->account->sms_messages->create( "+15702635740",  $to, $message );
+					}
+				} else {
+					$sms = $this->tools->sms->account->sms_messages->create( "+15702635740",  $to, $message );
+				}
+			}		
+
+			
 		}
 
 		private function sendEmail($postData,$type = ''){
