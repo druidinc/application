@@ -4,7 +4,7 @@
 		<div class="section group">
 			<div class="col span_1_of_2">
 			<div class="logo">
-	        	<img src="{$image}/jca_final_logo.png" />
+	        	<a href="{$base_url}"><img src="{$image}/jca_final_logo.png" /></a>
 	        </div>
 			</div>
 			<div class="col span_1_of_2 float_right">

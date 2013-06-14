@@ -72,7 +72,7 @@
 						<div class="services_container" >
 
 							{section name=serviceIndex loop=$services}
-								<a href="{$base_url}Services/service?cat_id={$services[serviceIndex].category_id}&subcat_id={$services[serviceIndex].id}">
+								<a href="{$base_url}Services/service?cid={$services[serviceIndex].category_id}&scid={$services[serviceIndex].id}">
 									<div class="col image_container">
 										<img src="{$image}/{$services[serviceIndex].image}" title="{$services[serviceIndex].name}" alt="{$services[serviceIndex].name}" style = "width:100%; height: 148px;">
 										<div class="col span_1_of_2 service_caption" >{$services[serviceIndex].name}</div>
