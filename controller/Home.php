@@ -10,17 +10,19 @@
 		private $sample;
 
 		public function main(){
-
+			$view_data = array(
+				"page" => "home",
+				"title" => "JCA Bookkeeping Services",
+				"mission" => "",
+				"vision"=> ""
+			);
 			//get the models
-			$this->_pages = $this->load->model('Admin/Pages_Model');
+			/*$this->_pages = $this->load->model('Admin/Pages_Model');
 			$this->_services = $this->load->model('Admin/Services_Model');
 
 			$pageData = $this->_pages->getPage('d',1);
 
-			$view_data = array(
-				"page" => "home",
-				"title" => "JCA Bookkeeping Services"
-			);
+			
 
 			foreach ($pageData as $data) {
 				$contents = json_decode($data['content']);
@@ -44,9 +46,13 @@
 				}
 			}
 
-			$view_data['services'] = $this->_services->getAllServices();
-
+			$view_data['services'] = $this->_services->getAllServices();*/
 			
+			$view_data['services'] = array();
+			$view_data['contact_company_name'] = "";
+			$view_data['contact_address'] = "";
+			$view_data['contact_email'] = "";
+			$view_data['contact_contacts'] = array();
 			$this->load->view("Home", $view_data);
 
 		}
